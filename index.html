@@ -1,0 +1,832 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BGE Corporation | E-commerce company in the Philippines</title>
+<meta name="description" content="BGE Corporation is an e-commerce company offering imported home medical devices, modern kitchenware, barley and coffee beverages, and POS machines, and develops websites and apps, including AIBOOM POS. Founded in Quezon City in 2018, headquartered in Oroquieta City, Misamis Occidental.">
+<link rel="icon" href="assets/brand/cube-light.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #27282c;        /* logo charcoal */
+    --ink-deep: #1b1c1f;
+    --red: #f00001;        /* logo red */
+    --red-deep: #c80000;
+    --paper: #ffffff;
+    --mist: #f7f7f8;
+    --body: #50535b;
+    --rule: #e2e4e8;
+    --on-dark: #c5c8cf;
+    --display: "Montserrat", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+    --text: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+    --gutter: clamp(20px, 5vw, 72px);
+    --measure: 62ch;
+    --grid-line: rgba(255, 255, 255, 0.045);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--body);
+    font-family: var(--text);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: inherit; }
+  a:focus-visible {
+    outline: 3px solid var(--red);
+    outline-offset: 3px;
+  }
+  h1, h2, h3 {
+    font-family: var(--display);
+    color: var(--ink);
+    margin: 0;
+    line-height: 1.08;
+  }
+  p { margin: 0 0 1.1em; max-width: var(--measure); }
+
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 var(--gutter); }
+
+  /* Draft notice */
+  .draft {
+    background: #fdeaea;
+    color: var(--red-deep);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    padding: 7px var(--gutter);
+    text-align: center;
+  }
+
+  /* Header */
+  .top {
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .top .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .brand img { height: 52px; width: auto; }
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 2.6vw, 34px);
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--ink);
+  }
+  .nav a { text-decoration: none; padding: 6px 0; }
+  .nav a:hover { color: var(--red); }
+
+  .btn {
+    display: inline-block;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    padding: 13px 24px;
+    border-radius: 999px;
+    transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .btn-red { background: var(--red); color: #fff; }
+  .btn-red:hover { background: var(--red-deep); }
+  .nav .btn-red { padding: 10px 20px; font-size: 0.875rem; }
+  .nav .btn-red:hover { color: #fff; }
+  .btn-ghost { color: var(--red); border: 1px solid var(--red); background: rgba(255, 255, 255, 0.8); }
+  .btn-ghost:hover { background: var(--red); color: #fff; }
+
+  /* Hero: dark red so the AI face glows */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    color: #f3d9da;
+    background:
+      linear-gradient(90deg, #270305 0%, rgba(39, 3, 5, 0.92) 30%, rgba(39, 3, 5, 0.35) 55%, rgba(39, 3, 5, 0) 72%),
+      url("assets/ai/face.jpg") right center / cover no-repeat,
+      #270305;
+    min-height: clamp(520px, 46vw, 720px);
+    display: flex;
+    align-items: center;
+    padding: clamp(56px, 7vw, 104px) 0;
+  }
+  .hero .wrap { width: 100%; }
+  .hero-copy { text-align: left; max-width: 640px; }
+  .hero h1 {
+    font-weight: 800;
+    font-size: clamp(3rem, 7.2vw, 6.25rem);
+    letter-spacing: -0.035em;
+    line-height: 0.98;
+    color: #fff;
+    text-shadow: 0 0 40px rgba(240, 0, 1, 0.35);
+  }
+  .hero .lede {
+    margin: clamp(12px, 1.6vw, 18px) 0 0;
+    font-size: clamp(1.0625rem, 1.4vw, 1.1875rem);
+    line-height: 1.55;
+    max-width: 52ch;
+    color: #f3d9da;
+  }
+  .hero .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: clamp(24px, 3vw, 36px);
+  }
+
+  .hero-sub {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+    line-height: 1.25;
+    color: #fff;
+    margin: clamp(16px, 2vw, 24px) 0 0;
+    max-width: none;
+  }
+  /* Featured product, bottom right of the hero */
+  .hero-feature {
+    position: absolute;
+    right: var(--gutter);
+    bottom: clamp(16px, 2.4vw, 32px);
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+    text-decoration: none;
+    color: #fff;
+    z-index: 0;
+  }
+  .hero-feature::before {
+    content: "";
+    position: absolute;
+    inset: -90px -120px -70px -180px;
+    background: radial-gradient(closest-side, rgba(16, 0, 2, 0.97) 45%, rgba(16, 0, 2, 0));
+    z-index: -1;
+  }
+  .hero-feature-text { display: flex; flex-direction: column; gap: 8px; padding-bottom: 18px; }
+  .hero-feature-label { font-family: var(--display); font-weight: 600; font-size: 0.875rem; color: #f3d9da; }
+  .hero-feature-logo { width: clamp(170px, 17vw, 240px); height: auto; filter: drop-shadow(0 0 10px rgba(16, 0, 2, 0.95)); }
+  .hero-feature-mascot {
+    width: clamp(110px, 11vw, 160px);
+    height: auto;
+    filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.55));
+    transition: transform 0.2s;
+  }
+  .hero-feature:hover .hero-feature-mascot { transform: translateY(-4px) rotate(-3deg); }
+  .hero-chips {
+    list-style: none;
+    margin: clamp(20px, 2.4vw, 28px) 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 560px;
+  }
+  .hero-chips a {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    padding: 7px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(6px);
+    transition: background-color 0.15s, border-color 0.15s;
+  }
+  .hero-chips a:hover { background: var(--red); border-color: var(--red); }
+  .hero .btn-red { box-shadow: 0 0 28px rgba(240, 0, 1, 0.6); }
+  .hero .btn-ghost { color: #fff; border-color: rgba(255, 255, 255, 0.6); background: transparent; }
+  .hero .btn-ghost:hover { background: #fff; color: var(--red-deep); }
+  .hero a:focus-visible { outline-color: #fff; }
+
+  /* Sparkle, chips */
+  .spark {
+    width: 1em;
+    height: 1em;
+    fill: var(--red);
+    flex: none;
+    vertical-align: -0.12em;
+    margin-right: 0.45em;
+  }
+  .ai-pill {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 8px 16px;
+    margin-bottom: clamp(18px, 2.4vw, 28px);
+    border-radius: 999px;
+    background:
+      linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)) padding-box,
+      linear-gradient(100deg, var(--red), #ff9d9d 50%, var(--red)) border-box;
+    border: 1.5px solid transparent;
+    box-shadow: 0 8px 24px -12px rgba(240, 0, 1, 0.45);
+  }
+  .ai-pill:hover { color: var(--red-deep); }
+  .advisor {
+    margin-top: 24px;
+    padding: 18px 20px;
+    border-radius: 12px;
+    background: linear-gradient(120deg, #fff5f5, #ffffff 60%);
+    border: 1px solid #ffd9d9;
+  }
+  .advisor p { margin: 0 0 10px; font-size: 0.9375rem; }
+  .advisor .advisor-title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips li {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--ink);
+    background: #fff;
+    border: 1px solid #ffc9c9;
+    border-radius: 999px;
+    padding: 6px 14px;
+  }
+
+  /* Sections */
+  .section { padding: clamp(56px, 8vw, 112px) 0; scroll-margin-top: 64px; }
+  .section h2 {
+    font-weight: 800;
+    font-size: clamp(1.875rem, 3.6vw, 3rem);
+    letter-spacing: -0.02em;
+    max-width: 16ch;
+  }
+  .section h2::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 4px;
+    background: var(--red);
+    margin-top: 20px;
+  }
+
+  /* About */
+  .skyline {
+    border-radius: 14px;
+    width: 100%;
+    aspect-ratio: 21 / 9;
+    object-fit: cover;
+    margin-bottom: clamp(36px, 5vw, 72px);
+    box-shadow: 0 30px 60px -30px rgba(39, 40, 44, 0.35);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(28px, 6vw, 96px);
+    align-items: start;
+  }
+  .about-grid .story p:first-child {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+
+  /* Product lines */
+  .lines { background: var(--mist); }
+  .lines .intro { margin-top: 24px; }
+  .manifest {
+    list-style: none;
+    margin: clamp(32px, 5vw, 64px) 0 0;
+    padding: 0;
+    border-top: 2px solid var(--ink);
+  }
+  .manifest > li {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 4fr) minmax(0, 3fr);
+    gap: clamp(16px, 4vw, 56px);
+    padding: clamp(24px, 3.5vw, 44px) 0;
+    border-bottom: 1px solid #d5d8de;
+    align-items: start;
+  }
+  .manifest h3 {
+    font-weight: 800;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    letter-spacing: -0.02em;
+  }
+  .manifest p { margin: 0; }
+  .manifest .items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .manifest .items li {
+    padding: 6px 0 6px 18px;
+    position: relative;
+  }
+  .manifest .items li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.95em;
+    width: 8px;
+    height: 8px;
+    background: var(--red);
+  }
+
+  /* Product photos */
+  .gallery {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(12px, 1.6vw, 24px);
+    margin-top: 8px;
+  }
+  .shot {
+    margin: 0;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .shot img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    padding: 8%;
+  }
+  .shot-life img { object-fit: cover; object-position: center 15%; padding: 0; }
+  .shot figcaption {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 0.9375rem;
+    color: var(--ink);
+    padding: 12px 16px;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* Digital */
+  .digital {
+    position: relative;
+    border-top: 1px solid var(--rule);
+    background:
+      radial-gradient(60% 50% at 100% 0%, rgba(240, 0, 1, 0.07), transparent 70%),
+      radial-gradient(rgba(39, 40, 44, 0.09) 1px, transparent 1.5px) 0 0 / 22px 22px,
+      var(--paper);
+  }
+  .digital-head {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(28px, 6vw, 96px);
+    align-items: start;
+  }
+  .digital-head p { font-size: 1.25rem; line-height: 1.5; color: var(--ink); margin: 0; }
+  .digital-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(16px, 2vw, 28px);
+    margin-top: clamp(36px, 5vw, 72px);
+    align-items: stretch;
+  }
+  .service {
+    border-radius: 14px;
+    padding: clamp(22px, 2.6vw, 36px);
+  }
+  .service {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-top: 4px solid var(--red);
+  }
+  .service h3 { font-weight: 700; font-size: 1.375rem; margin-bottom: 10px; }
+  .service p { margin: 0; }
+  .aiboom {
+    margin-top: clamp(24px, 3vw, 40px);
+    border: 1.5px solid transparent;
+    border-radius: 18px;
+    padding: clamp(22px, 3.4vw, 48px);
+    background:
+      linear-gradient(var(--paper), var(--paper)) padding-box,
+      linear-gradient(135deg, var(--red), #ffb3b3 35%, #e2e4e8 60%, var(--red)) border-box;
+    box-shadow: 0 40px 80px -50px rgba(240, 0, 1, 0.45);
+  }
+  .aiboom-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+    gap: clamp(24px, 4vw, 64px);
+    align-items: center;
+  }
+  .aiboom-tag {
+    font-family: var(--display);
+    font-weight: 700;
+    color: var(--red-deep);
+    margin: 0 0 12px;
+  }
+  .aiboom h3 img { width: min(100%, 420px); }
+  .aiboom-line {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.25rem, 2vw, 1.625rem);
+    line-height: 1.25;
+    color: var(--ink);
+    margin: 18px 0 14px;
+  }
+  .aiboom-features {
+    list-style: none;
+    margin: 24px 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 clamp(20px, 3vw, 40px);
+    border-top: 1px solid var(--rule);
+  }
+  .aiboom-features li {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 0.9375rem;
+  }
+  .aiboom-features strong {
+    display: block;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--ink);
+  }
+  .aiboom-mascot { width: min(100%, 360px); justify-self: center; }
+  .aiboom-devices {
+    width: 100%;
+    border-radius: 14px;
+    margin-top: clamp(28px, 4vw, 56px);
+  }
+  .aiboom-shots {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: clamp(12px, 1.6vw, 24px);
+    margin-top: clamp(12px, 1.6vw, 24px);
+  }
+  .aiboom-shots .shot img {
+    aspect-ratio: auto;
+    height: clamp(200px, 24vw, 320px);
+    padding: 5%;
+  }
+
+  /* Company facts */
+  .facts-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(28px, 6vw, 96px);
+  }
+  .facts { margin: 0; border-top: 2px solid var(--ink); }
+  .facts div {
+    display: grid;
+    grid-template-columns: 11rem minmax(0, 1fr);
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .facts dt { font-size: 0.9375rem; }
+  .facts dd { margin: 0; color: var(--ink); font-weight: 500; }
+
+  /* Contact: white, with the city on the right */
+  .contact {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#ffffff, #f4f8fb);
+    border-top: 1px solid var(--rule);
+  }
+  .contact::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 42%;
+    background: url("assets/brand/city-right.jpg") right bottom / cover no-repeat;
+    -webkit-mask-image: linear-gradient(to left, #000 30%, transparent);
+    mask-image: linear-gradient(to left, #000 30%, transparent);
+    pointer-events: none;
+  }
+  .contact .wrap { position: relative; z-index: 1; }
+  .contact-body { max-width: 760px; }
+  .contact-body > p { margin-top: 24px; }
+  .contact-list {
+    list-style: none;
+    margin: clamp(24px, 3vw, 40px) 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(12px, 1.6vw, 20px);
+  }
+  .contact-list li {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--red);
+    border-radius: 10px;
+    padding: 18px 20px;
+    color: var(--ink);
+  }
+  .contact-list strong {
+    display: block;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 0.9375rem;
+    color: var(--red-deep);
+    margin-bottom: 4px;
+  }
+  .contact-list a { font-weight: 600; text-decoration-color: var(--red); text-underline-offset: 4px; }
+  .contact-list a:hover { color: var(--red-deep); }
+
+  footer {
+    background: var(--paper);
+    color: var(--body);
+    font-size: 0.875rem;
+    padding: 28px 0;
+  }
+  footer p { margin: 0; max-width: none; }
+
+  @media (max-width: 900px) {
+    .about-grid, .facts-grid, .digital-head, .digital-grid, .aiboom-intro { grid-template-columns: 1fr; }
+    .contact::after { width: 100%; opacity: 0.22; -webkit-mask-image: none; mask-image: none; }
+    .aiboom-mascot { width: min(60%, 240px); order: -1; justify-self: start; }
+    .aiboom-shots { grid-template-columns: 1fr 1fr; }
+    .aiboom-shots .shot:first-child { grid-column: 1 / -1; }
+    .aiboom-features { grid-template-columns: 1fr; }
+    .hero {
+      display: block;
+      min-height: 0;
+      padding-top: 300px;
+      background:
+        linear-gradient(to bottom, rgba(39, 3, 5, 0) 180px, #270305 320px),
+        url("assets/ai/face.jpg") 88% top / auto 340px no-repeat,
+        #270305;
+    }
+    .hero-feature { position: relative; right: auto; bottom: auto; justify-content: flex-end; margin: 28px var(--gutter) 0; }
+    .hero-feature::before { display: none; }
+    .manifest > li { grid-template-columns: 1fr; gap: 12px; }
+    .gallery { grid-template-columns: 1fr 1fr; }
+    .facts div { grid-template-columns: 1fr; gap: 2px; }
+    .nav a:not(.keep) { display: none; }
+    .brand img { height: 44px; }
+    .skyline { aspect-ratio: 16 / 9; }
+  }
+  @media (max-width: 560px) {
+    .contact-list { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="draft">Draft for review. Not yet published.</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="BGE Corporation home"><img src="assets/brand/logo-light.jpg" alt="BGE Corporation" width="1700" height="480"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#products">What we import</a>
+      <a href="#digital">Digital</a>
+      <a href="#company">Company facts</a>
+      <a class="keep btn btn-red" href="#contact">Contact us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <h1>From cart to code.</h1>
+        <p class="hero-sub">E-commerce since 2018. Now writing our own software.</p>
+        <p class="lede">BGE Corporation brings in everyday products for homes and businesses, and develops the websites and apps that run them.</p>
+        <div class="actions">
+          <a class="btn btn-ghost" href="#digital">See our digital work</a>
+        </div>
+      </div>
+    </div>
+    <a class="hero-feature" href="#aiboom" aria-label="Featuring AIBOOM POS">
+      <span class="hero-feature-text">
+        <span class="hero-feature-label">Featuring</span>
+        <img class="hero-feature-logo" src="assets/aiboom/logo-on-dark.png" alt="AIBOOM POS" width="1860" height="250">
+      </span>
+      <img class="hero-feature-mascot" src="assets/aiboom/mascot-cutout.png" alt="" width="743" height="809">
+    </a>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <img class="skyline" src="assets/brand/skyline.jpg" alt="BGE Corporation logo over a bright city skyline" width="1672" height="941">
+      <div class="about-grid">
+        <h2>Started online, built on practical products</h2>
+        <div class="story">
+          <p>BGE Corporation opened on May 18, 2018 in Central, Quezon City, as an e-commerce company. The work was simple to describe: find useful products made abroad, import them, and offer them through e-commerce.</p>
+          <p>Our first line was home medical devices. Blood pressure monitors, thermometers and pulse oximeters are small tools, but they let a household keep an eye on its health between visits to the doctor. They gave the company its start and remain a core part of what we bring in.</p>
+          <p>From there we added modern kitchenware, including multicookers and vegetable multi-slicers, for people who want to prepare meals with less time and effort.</p>
+          <p>We also import and distribute beverages, with barley and coffee as our main drinks.</p>
+          <p>Our imports now extend to digital machines for business as well: point-of-sale (POS) machines that stores use to record sales at the counter.</p>
+          <p>More recently, we have ventured into digital products and services. We specialize in web and app development, and our latest product is AIBOOM POS. Today the company works on two fronts: e-commerce, with imported products for homes and businesses, and building software.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section lines" id="products">
+    <div class="wrap">
+      <h2>What we import and distribute</h2>
+      <p class="intro">Four product lines, chosen for everyday use in homes and businesses.</p>
+
+      <ul class="manifest">
+        <li>
+          <h3>Home medical devices</h3>
+          <p>Monitoring devices that are easy to read and use at home, so routine checks do not have to wait for a clinic visit.</p>
+          <ul class="items">
+            <li>Blood pressure monitors</li>
+            <li>Thermometers</li>
+            <li>Pulse oximeters</li>
+          </ul>
+          <div class="gallery">
+            <figure class="shot shot-life">
+              <img src="assets/products/bp-monitor-in-use.jpg" alt="A woman at a dining table taking her blood pressure with an upper-arm monitor" loading="lazy">
+              <figcaption>Checking blood pressure at home</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="assets/products/bp-monitor.jpg" alt="Digital blood pressure monitor with arm cuff and USB cable" loading="lazy">
+              <figcaption>Blood pressure monitor</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="assets/products/thermometer.jpg" alt="Handheld infrared thermometer showing 36.2 degrees Celsius" loading="lazy">
+              <figcaption>Infrared thermometer</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="assets/products/pulse-oximeter.jpg" alt="Fingertip pulse oximeter clipped on a finger" loading="lazy">
+              <figcaption>Pulse oximeter</figcaption>
+            </figure>
+          </div>
+        </li>
+        <li>
+          <h3>Modern kitchenware</h3>
+          <p>Appliances and tools that shorten preparation and cooking time in the kitchen.</p>
+          <ul class="items">
+            <li>Multicookers</li>
+            <li>Vegetable multi-slicers</li>
+          </ul>
+        </li>
+        <li>
+          <h3>Beverages</h3>
+          <p>Drinks we import and distribute for daily enjoyment.</p>
+          <ul class="items">
+            <li>Barley</li>
+            <li>Coffee</li>
+          </ul>
+        </li>
+        <li>
+          <h3>Digital machines</h3>
+          <p>Point-of-sale hardware for stores and other businesses, used to record sales and serve customers at the counter.</p>
+          <ul class="items">
+            <li>POS machines</li>
+          </ul>
+          <div class="gallery">
+            <figure class="shot">
+              <img src="assets/products/pos-set.jpg" alt="POS terminal with two screens, cash drawer, barcode scanner and receipt printer" loading="lazy">
+              <figcaption>POS set with cash drawer</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="assets/products/pos-dual-screen.jpg" alt="Dual-screen touch POS terminal on a stand" loading="lazy">
+              <figcaption>Dual-screen POS terminal</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="assets/products/pos-kiosk.jpg" alt="Countertop self-service kiosk with touch screen and built-in receipt printer" loading="lazy">
+              <figcaption>Self-service kiosk</figcaption>
+            </figure>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section digital" id="digital">
+    <div class="wrap">
+      <div class="digital-head">
+        <h2>Digital products and services</h2>
+        <div>
+          <p>Alongside importing, BGE Corporation has ventured into software. We specialize in web and app development, both as a service and for digital products of our own.</p>
+        </div>
+      </div>
+
+      <div class="digital-grid">
+        <div class="service">
+          <h3>Web development</h3>
+          <p>Websites and web-based systems, designed and built for business use.</p>
+        </div>
+        <div class="service">
+          <h3>App development</h3>
+          <p>Applications taken from an idea to a working product.</p>
+        </div>
+      </div>
+
+      <article class="aiboom" id="aiboom">
+        <div class="aiboom-intro">
+          <div>
+            <p class="aiboom-tag"><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c.8 6 4 9.2 10 10-6 .8-9.200 4-10 10-.8-6-4-9.200-10-10 6-.8 9.200-4 10-10z"/></svg>Our latest product, AI-powered</p>
+            <h3><img src="assets/aiboom/logo.jpg" alt="AIBOOM POS" width="1860" height="250"></h3>
+            <p class="aiboom-line">An AI-powered POS to help your business boom.</p>
+            <p>AIBOOM POS is a point-of-sale system developed by BGE Corporation. It handles selling at the counter, keeps track of products and stock, and shows how the store is doing each day. It runs on a phone, a tablet or a POS terminal.</p>
+            <ul class="aiboom-features">
+              <li><strong>Selling</strong> Point of sale and sales history</li>
+              <li><strong>Inventory</strong> Products, categories and barcodes</li>
+              <li><strong>Restocking</strong> Stock predictor and shopping list</li>
+              <li><strong>Utang</strong> Customer credit and recorded payments</li>
+              <li><strong>Reports</strong> Daily sales, profit and best sellers</li>
+              <li><strong>AI Advisor</strong> Ask about sales, inventory or unpaid utang</li>
+            </ul>
+            <div class="advisor">
+              <p class="advisor-title"><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c.8 6 4 9.2 10 10-6 .8-9.200 4-10 10-.8-6-4-9.200-10-10 6-.8 9.200-4 10-10z"/></svg>Ask the built-in AI Advisor</p>
+              <p>Store owners can ask it about their sales, inventory or unpaid utang. Example questions:</p>
+              <ul class="chips">
+                <li>How are my sales today?</li>
+                <li>Which items are running low?</li>
+                <li>Who has unpaid utang?</li>
+              </ul>
+            </div>
+          </div>
+          <img class="aiboom-mascot" src="assets/aiboom/mascot.jpg" alt="The AIBOOM POS mascot, a smiling receipt printer giving a thumbs up" width="760" height="830" loading="lazy">
+        </div>
+
+        <img class="aiboom-devices" src="assets/aiboom/devices.jpg" alt="AIBOOM POS shown on a phone, a tablet and a POS terminal" width="1671" height="941" loading="lazy">
+
+        <div class="aiboom-shots">
+          <figure class="shot">
+            <img src="assets/aiboom/dashboard.jpg" alt="AIBOOM POS dashboard showing sales today, profit, unpaid utang, daily sales chart and recent sales" loading="lazy">
+            <figcaption>Store dashboard</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/aiboom/phone.jpg" alt="AIBOOM POS home screen on a phone" loading="lazy">
+            <figcaption>On a phone</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/aiboom/terminal.jpg" alt="AIBOOM POS checkout screen on a POS terminal" loading="lazy">
+            <figcaption>On a POS terminal</figcaption>
+          </figure>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="company">
+    <div class="wrap facts-grid">
+      <h2>Company facts</h2>
+      <dl class="facts">
+        <div><dt>Company name</dt><dd>BGE Corporation</dd></div>
+        <div><dt>Registered name</dt><dd>BGE OPC</dd></div>
+        <div><dt>Founded</dt><dd>May 18, 2018</dd></div>
+        <div><dt>Headquarters</dt><dd>Poblacion 1, Oroquieta City, Misamis Occidental</dd></div>
+        <div><dt>Where we started</dt><dd>Central, Quezon City, Philippines</dd></div>
+        <div><dt>How we started</dt><dd>E-commerce in imported products</dd></div>
+        <div><dt>What we do</dt><dd>E-commerce in imported home medical devices, modern kitchenware, beverages and POS machines; web and app development</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="wrap">
+      <div class="contact-body">
+        <h2>Contact BGE Corporation</h2>
+        <p>For product inquiries, distribution, and web or app development, reach us through any of the following.</p>
+        <ul class="contact-list">
+          <li><strong>Headquarters</strong>Poblacion 1, Oroquieta City, Misamis Occidental</li>
+          <li><strong>Quezon City branch and warehouse</strong>12 Mabuhay St, Diliman, Quezon City</li>
+          <li><strong>Phone</strong><a href="tel:+639524817580">+63 952 481 7580</a></li>
+          <li><strong>Email</strong><a href="mailto:info@bge.com.ph">info@bge.com.ph</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>BGE Corporation (registered as BGE OPC). Oroquieta City, Misamis Occidental, Philippines.</p>
+  </div>
+</footer>
+
+</body>
+</html>
