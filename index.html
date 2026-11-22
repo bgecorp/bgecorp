@@ -612,6 +612,7 @@
     grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
     gap: clamp(28px, 6vw, 96px);
   }
+  .facts-mascot { width: min(100%, 300px); height: auto; margin-top: clamp(20px, 3vw, 36px); mix-blend-mode: multiply; }
   .facts { margin: 0; border-top: 2px solid var(--ink); }
   .facts div {
     display: grid;
@@ -682,6 +683,7 @@
 
   @media (max-width: 900px) {
     .hq-head { grid-template-columns: 1fr; }
+    .facts-mascot { width: 200px; }
     .hq-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .about-grid, .facts-grid, .digital-head, .digital-grid, .aiboom-intro { grid-template-columns: 1fr; }
     .contact::after { width: 100%; opacity: 0.22; -webkit-mask-image: none; mask-image: none; }
@@ -960,7 +962,10 @@
 
   <section class="section" id="company">
     <div class="wrap facts-grid">
-      <h2>Company facts</h2>
+      <div class="facts-side">
+        <h2>Company facts</h2>
+        <img class="facts-mascot" src="assets/mascot/bge-mascot.jpg" alt="The BGE Corporation robot mascot giving a thumbs up" width="700" height="899" loading="lazy">
+      </div>
       <dl class="facts">
         <div><dt>Company name</dt><dd>BGE Corporation</dd></div>
         <div><dt>Registered name</dt><dd>BGE OPC</dd></div>
