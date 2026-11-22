@@ -54,16 +54,6 @@
 
   .wrap { max-width: 1240px; margin: 0 auto; padding: 0 var(--gutter); }
 
-  /* Draft notice */
-  .draft {
-    background: #fdeaea;
-    color: var(--red-deep);
-    font-size: 0.8125rem;
-    font-weight: 500;
-    padding: 7px var(--gutter);
-    text-align: center;
-  }
-
   /* Header */
   .top {
     background: var(--paper);
@@ -304,6 +294,30 @@
     line-height: 1.5;
     color: var(--ink);
   }
+
+  /* Headquarters photos */
+  .hq { border-top: 1px solid var(--rule); }
+  .hq-head {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(28px, 6vw, 96px);
+    align-items: start;
+  }
+  .hq-head p { font-size: 1.25rem; line-height: 1.5; color: var(--ink); margin: 0; }
+  .hq-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(8px, 1vw, 14px);
+    margin-top: clamp(32px, 5vw, 64px);
+  }
+  .hq-grid img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .hq-grid .lead { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
 
   /* Product lines */
   .lines { background: var(--mist); }
@@ -559,6 +573,8 @@
   footer p { margin: 0; max-width: none; }
 
   @media (max-width: 900px) {
+    .hq-head { grid-template-columns: 1fr; }
+    .hq-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .about-grid, .facts-grid, .digital-head, .digital-grid, .aiboom-intro { grid-template-columns: 1fr; }
     .contact::after { width: 100%; opacity: 0.22; -webkit-mask-image: none; mask-image: none; }
     .aiboom-mascot { width: min(60%, 240px); order: -1; justify-self: start; }
@@ -594,7 +610,6 @@
 </head>
 <body>
 
-<div class="draft">Draft for review. Not yet published.</div>
 
 <header class="top">
   <div class="wrap">
@@ -648,6 +663,26 @@
     </div>
   </section>
 
+  <section class="section hq" id="headquarters">
+    <div class="wrap">
+      <div class="hq-head">
+        <h2>Inside our headquarters</h2>
+        <p>Our head office is in Poblacion 1, Oroquieta City, Misamis Occidental. It has an open workspace and a glass-walled meeting room, and it is where our team works every day.</p>
+      </div>
+      <div class="hq-grid">
+        <img class="lead" src="assets/hq/hq-1.jpg" alt="The lit BGE Corporation sign at the office entrance on opening day, with flowers and balloons" loading="lazy">
+        <img src="assets/hq/hq-2.jpg" alt="Open workspace with long tables, pendant lights and a brick feature wall" loading="lazy">
+        <img src="assets/hq/hq-3.jpg" alt="Glass-walled meeting room beside the open workspace, with the team at work" loading="lazy">
+        <img src="assets/hq/hq-4.jpg" alt="Team meeting around a table with a projector on the wall" loading="lazy">
+        <img src="assets/hq/hq-5.jpg" alt="Four team members with laptops at the meeting table" loading="lazy">
+        <img src="assets/hq/hq-6.jpg" alt="The glass meeting room and brick wall seen from the workspace" loading="lazy">
+        <img src="assets/hq/hq-7.jpg" alt="Staff holding candles beside the BGE Corporation sign during the office blessing" loading="lazy">
+        <img src="assets/hq/hq-8.jpg" alt="The office blessing in the open workspace" loading="lazy">
+        <img src="assets/hq/hq-9.jpg" alt="A team member helping two colleagues at a laptop" loading="lazy">
+      </div>
+    </div>
+  </section>
+
   <section class="section lines" id="products">
     <div class="wrap">
       <h2>What we import and distribute</h2>
@@ -687,7 +722,24 @@
           <ul class="items">
             <li>Multicookers</li>
             <li>Vegetable multi-slicers</li>
+            <li>Rice cookers</li>
+            <li>Blenders</li>
+            <li>Dough mixers</li>
           </ul>
+          <div class="gallery">
+            <figure class="shot">
+              <img src="assets/products/rice-cooker.jpg" alt="Red electric rice cooker with cook and warm lights" loading="lazy">
+              <figcaption>Rice cooker</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="assets/products/blender.jpg" alt="Red heavy-duty blender with a jug full of fruit" loading="lazy">
+              <figcaption>Blender</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="assets/products/dough-mixer.jpg" alt="Red spiral dough mixer with a stainless steel bowl" loading="lazy">
+              <figcaption>Dough mixer</figcaption>
+            </figure>
+          </div>
         </li>
         <li>
           <h3>Beverages</h3>
