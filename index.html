@@ -490,6 +490,8 @@
     object-fit: contain;
     padding: 8%;
   }
+  .shot-wide { grid-column: span 2; }
+  .shot-wide img { aspect-ratio: 4 / 3; padding: 4%; }
   .shot-life img { object-fit: cover; object-position: center 15%; padding: 0; }
   .shot figcaption {
     font-family: var(--display);
@@ -924,6 +926,12 @@
             <li>Barley</li>
             <li>Coffee</li>
           </ul>
+          <div class="gallery">
+            <figure class="shot shot-wide">
+              <img src="assets/products/beverages.jpg" alt="Longlife Corn Coffee with malunggay and mangosteen, and Longlife Miracle Pure Barley Powder, shown with a cup of coffee and a glass of barley drink" loading="lazy">
+              <figcaption>Longlife Corn Coffee and Pure Barley Powder</figcaption>
+            </figure>
+          </div>
         </li>
         <li>
           <h3>Digital machines</h3>
